@@ -50,6 +50,8 @@ const tourSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now(),
+    // Never send to clients fields like: createdAt, password
+    select: false,
   },
   startDates: [Date],
 });
